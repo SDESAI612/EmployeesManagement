@@ -1,0 +1,39 @@
+<div class="container">
+    <h2>Employee Records</h2>
+    <br><br>
+    <p>The table contains the record of the employees of the company</p>
+    <br>
+    <button routerLink="Registration">Add</button><br><br>
+    <div class="form-group input-group">
+        <div class="input-group-prepend">
+        </div>
+        <input class="form-control" placeholder="search" type="text" [(ngModel)]="searchEmployee">
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Full Name<span (click)="toggleUp()">&nbsp;\/</span><span (click)="toggleDown()">&nbsp;/\</span></th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>City</th>
+                <th>Department</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employeeData of employeeObject | searchEmployee: searchEmployee | sort: 'fullName' :reverse">
+                <th> {{employeeData.id}} </th>
+                <th>{{employeeData.fullName}}</th>
+                <th>{{employeeData.emailAddress}}</th>
+                <th>{{employeeData.mobileNumber}}</th>
+                <th>{{employeeData.cityName}}</th>
+                <th>{{employeeData.departmentName}}</th>
+                <th><button (click)="DeleteData(employeeData.id)">Delete</button>&nbsp;<button (click)="editData(employeeData.id)">Edit</button></th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div style="text-align: center; margin-left: 35%;">
+    <router-outlet></router-outlet>
+</div>
