@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {  FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import {  FormBuilder, Validators } from '@angular/forms';
+import {  HttpClient } from '@angular/common/http';
 import { CRUDService } from 'src/app/shared/crud.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -16,6 +16,10 @@ export class EmployeeRegistrationComponent implements OnInit {
   empObj;
   apiUrl="http://localhost:3000/employeeData";  
   submitted:boolean=false;
+
+/**
+ * This is the form group named employee
+ */
   employee = this.fb.group({
     fullName: ['',[Validators.required]],
     emailAddress: ['',[Validators.required]],
@@ -26,8 +30,13 @@ export class EmployeeRegistrationComponent implements OnInit {
     gender:['',[Validators.required]],
     employeeType:['false'] 
   });
+
   constructor(private fb: FormBuilder, private http: HttpClient, private emp: CRUDService,private routes: ActivatedRoute) { }
 
+
+  /**  
+   * This is for adding new data or updating data
+   */
   addData()
   { 
     if(!this.id&& this.employee.valid)
@@ -53,6 +62,10 @@ export class EmployeeRegistrationComponent implements OnInit {
       })
   }
 
+/**
+ * This function is for setting value to the form filled from json file
+ * @param id This will get the id value from json and send to URL  
+ */  
 getEmployee(id: number)
 { debugger;
   this.id=this.routes.snapshot.params['id'];
@@ -62,7 +75,6 @@ this.http.get(this.apiUrl+'/'+id).subscribe(
     console.log(data);
     this.employee.setValue(
       { 
-        // id: this.empData.id,
         fullName: this.empData.fullName,
         emailAddress: this.empData.emailAddress,
         mobileNumber: this.empData.mobileNumber,
@@ -78,10 +90,17 @@ this.http.get(this.apiUrl+'/'+id).subscribe(
   }
   ); 
   }
+
+  /** 
+   * This will reset whole form values
+   */
   resetData(){
     this.employee.reset();
   }
   
+  /**
+   * This is used for getting form control in HTML
+   */
   get f()
   {
     return this.employee.controls;
