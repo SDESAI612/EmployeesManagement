@@ -1,0 +1,70 @@
+{
+  "employeeData": [
+    {
+      "fullName": "Shiv Desai",
+      "emailAddress": "shivdesai612@gmail.com",
+      "mobileNumber": "07567 584736",
+      "cityName": "Valsad",
+      "dateHire": "2020-01-07",
+      "departmentName": "angular",
+      "gender": "MALE",
+      "employeeType": true,
+      "id": 1
+    },
+    {
+      "fullName": "Aastha",
+      "emailAddress": "Aastha@123",
+      "mobileNumber": "123456",
+      "cityName": "Valsad",
+      "dateHire": "2020-02-17",
+      "departmentName": ".Net",
+      "gender": "MALE",
+      "employeeType": false,
+      "id": 2
+    },
+    {
+      "fullName": "Tapas",
+      "emailAddress": "tapas@123",
+      "mobileNumber": "789564232",
+      "cityName": "Valsad",
+      "dateHire": "2020-02-09",
+      "departmentName": "Mobile",
+      "gender": "Others",
+      "employeeType": false,
+      "id": 3
+    },
+    {
+      "fullName": "Kiran",
+      "emailAddress": "kiran@123",
+      "mobileNumber": "789462588",
+      "cityName": "Billimora",
+      "dateHire": "2020-02-01",
+      "departmentName": "Mobile",
+      "gender": "MALE",
+      "employeeType": false,
+      "id": 6
+    },
+    {
+      "fullName": "Dhruvit ",
+      "emailAddress": "Dhruvit@123",
+      "mobileNumber": "1234566",
+      "cityName": "Surat",
+      "dateHire": "2020-02-11",
+      "departmentName": "angular",
+      "gender": "MALE",
+      "employeeType": "false",
+      "id": 7
+    },
+    {
+      "fullName": "Amit",
+      "emailAddress": "Amit@123",
+      "mobileNumber": "938237622",
+      "cityName": "Valsad",
+      "dateHire": "2020-02-03",
+      "departmentName": "angular",
+      "gender": "MALE",
+      "employeeType": "false",
+      "id": 8
+    }
+  ]
+}
