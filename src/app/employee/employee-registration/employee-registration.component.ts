@@ -33,7 +33,6 @@ export class EmployeeRegistrationComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private http: HttpClient, private emp: CRUDService,private routes: ActivatedRoute) { }
 
-
   /**  
    * This is for adding new data or updating data
    */
@@ -50,6 +49,7 @@ export class EmployeeRegistrationComponent implements OnInit {
       return;
     }
   }
+  
   ngOnInit() {
     this.routes.paramMap.subscribe(params =>
       {
