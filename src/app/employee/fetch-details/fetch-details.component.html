@@ -13,7 +13,9 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Full Name<span (click)="toggleUp()">&nbsp;\/</span><span (click)="toggleDown()">&nbsp;/\</span></th>
+                <th>Full Name<span style="cursor: pointer;" (click)="toggleUp()">&nbsp;&#x2B06;</span> <span style="cursor: pointer;" (click)="toggleDown()">&nbsp;&#x2B07;
+                </span>
+                </th>
                 <th>Email</th>
                 <th>Mobile</th>
                 <th>City</th>
@@ -36,4 +38,3 @@
 </div>
 <div style="text-align: center; margin-left: 35%;">
     <router-outlet></router-outlet>
-</div>

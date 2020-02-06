@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {  FormBuilder, Validator, Validators, FormGroup } from '@angular/forms';
+import {  FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CRUDService } from 'src/app/shared/crud.service';
 import { ActivatedRoute } from '@angular/router';
@@ -17,20 +17,20 @@ export class EmployeeRegistrationComponent implements OnInit {
   apiUrl="http://localhost:3000/employeeData";  
   submitted:boolean=false;
   employee = this.fb.group({
-    fullName: [''],
-    emailAddress: [''],
-    mobileNumber: [''],
-    cityName: [''],
-    dateHire: [''],
-    departmentName: [''],
-    gender:[''],
+    fullName: ['',[Validators.required]],
+    emailAddress: ['',[Validators.required]],
+    mobileNumber: ['',[Validators.required]],
+    cityName: ['',[Validators.required]],
+    dateHire: ['',[Validators.required]],
+    departmentName: ['',[Validators.required]],
+    gender:['',[Validators.required]],
     employeeType:['false'] 
   });
   constructor(private fb: FormBuilder, private http: HttpClient, private emp: CRUDService,private routes: ActivatedRoute) { }
 
   addData()
   { 
-    if(!this.id)
+    if(!this.id&& this.employee.valid)
     this.emp.postDetails(this.employee.value).subscribe();
     else
     {  debugger
@@ -82,7 +82,7 @@ this.http.get(this.apiUrl+'/'+id).subscribe(
     this.employee.reset();
   }
   
-  ControlFunction()
+  get f()
   {
     return this.employee.controls;
   }

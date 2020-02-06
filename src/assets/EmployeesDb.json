@@ -49,11 +49,22 @@
       "emailAddress": "Dhruvit@123",
       "mobileNumber": "1234566",
       "cityName": "Surat",
-      "dateHire": "2020-02-17",
+      "dateHire": "2020-02-11",
       "departmentName": "angular",
       "gender": "MALE",
       "employeeType": "false",
       "id": 7
+    },
+    {
+      "fullName": "Amit",
+      "emailAddress": "Amit@123",
+      "mobileNumber": "938237622",
+      "cityName": "Valsad",
+      "dateHire": "2020-02-03",
+      "departmentName": "angular",
+      "gender": "MALE",
+      "employeeType": "false",
+      "id": 8
     }
   ]
 }

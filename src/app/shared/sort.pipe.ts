@@ -11,7 +11,7 @@ export class SortPipe implements PipeTransform {
     if (field) items.sort((a, b) => a[field] > b[field] ? 1 : -1);
     else items.sort((a, b) => a > b ? 1 : -1);
 
-    if (reverse) items.reverse();
+    if (reverse) items.reverse();5
 
     return items;
   }

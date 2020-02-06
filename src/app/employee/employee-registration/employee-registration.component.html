@@ -8,14 +8,21 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                     </div>
-                    <input formControlName="fullName" class="form-control" placeholder="Full name" type="text">
+                    <input formControlName="fullName" class="form-control" placeholder="Full name" type="text" [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }" required>
+                    <div *ngIf="submitted && f.fullName.errors" class="invalid-feedback">
+                        <div *ngIf="f.fullName.errors.required">First Name is required</div>
+                    </div>
                 </div>
                 <!-- form-group// -->
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                     </div>
-                    <input formControlName="emailAddress" class="form-control" placeholder="Email address" type="email">
+                    <input formControlName="emailAddress" class="form-control" placeholder="Email address" type="email" [ngClass]="{ 'is-invalid': submitted && f.emailAddress.errors }">
+                    <div *ngIf="submitted && f.emailAddress.errors" class="invalid-feedback">
+                        <div *ngIf="f.emailAddress.errors.required">Email is required</div>
+                        <div *ngIf="f.emailAddress.errors.email">Email must be a valid email address</div>
+                    </div>
                 </div>
                 <!-- form-group// -->
                 <div class="form-group input-group">
