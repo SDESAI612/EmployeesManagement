@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./employee-registration.component.scss']
 })
 export class EmployeeRegistrationComponent implements OnInit {
+  
   empData;
   id;
   updateId;
@@ -49,7 +50,7 @@ export class EmployeeRegistrationComponent implements OnInit {
       return;
     }
   }
-  
+
   ngOnInit() {
     this.routes.paramMap.subscribe(params =>
       {
